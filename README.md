@@ -29,7 +29,13 @@ Versione AR (esempio):
 Scansiona il QR code generato per accedere direttamente al cuore umano in AR dal tuo smartphone.
 
 ## 📜 Licenza
-Il modello 3D utilizzato è rilasciato sotto [Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/) (licenza Sketchfab).
+
+Il modello 3D "Realistic Human Heart" è stato scaricato da Sketchfab ed è rilasciato sotto la licenza **Creative Commons Attribution 4.0 (CC BY 4.0)**.
+
+🔗 https://sketchfab.com/3d-models/realistic-human-heart-3f8072336ce94d18b3d0d055a1ece089  
+📌 Creato da: [The Requiem](https://sketchfab.com/therequiem)
+
+L'autore deve essere sempre citato quando il modello viene utilizzato.
 
 ## ✍️ Crediti
 - Realizzazione progetto: [Il tuo nome o gruppo scolastico]

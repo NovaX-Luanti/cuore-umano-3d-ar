@@ -1,8 +1,22 @@
-## 📜 Licenza
+Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-Il modello 3D "Realistic Human Heart" è stato scaricato da Sketchfab ed è rilasciato sotto la licenza **Creative Commons Attribution 4.0 (CC BY 4.0)**.
+Questo progetto utilizza il modello 3D "Realistic Human Heart" scaricato da Sketchfab, creato da The Requiem.
 
-🔗 https://sketchfab.com/3d-models/realistic-human-heart-3f8072336ce94d18b3d0d055a1ece089  
-📌 Creato da: [The Requiem](https://sketchfab.com/therequiem)
+Link al modello:
+https://sketchfab.com/3d-models/realistic-human-heart-3f8072336ce94d18b3d0d055a1ece089
 
-L'autore deve essere sempre citato quando il modello viene utilizzato.
+Autore:
+The Requiem – https://sketchfab.com/therequiem
+
+Licenza:
+Questo modello è rilasciato sotto la licenza Creative Commons Attribution 4.0 International.
+
+Puoi:
+✔ Condividere – copiare e ridistribuire il materiale in qualsiasi formato.
+✔ Adattare – remixare, trasformare e costruire sul materiale per qualsiasi scopo, anche commerciale.
+
+Devi:
+✅ Attribuire – Devi dare credito appropriato, fornire un link alla licenza e indicare se sono state effettuate modifiche. Puoi farlo in qualsiasi modo ragionevole, ma non in modo tale da suggerire che il licenziante approvi te o il tuo uso.
+
+Licenza completa disponibile qui:
+https://creativecommons.org/licenses/by/4.0/

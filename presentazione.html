@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esplora il Cuore Umano in 3D</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: #b71c1c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #d32f2f;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    nav a:hover {
+      background: #b71c1c;
+    }
+    section {
+      padding: 20px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .ar-button {
+      display: inline-block;
+      background: #d32f2f;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      background: #b71c1c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Esplora il Cuore Umano in 3D</h1>
+    <p>Un battito tecnologico per capire l'anatomia in realtà aumentata</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showSection('intro')">Introduzione</a>
+    <a href="#" onclick="showSection('modello')">Modello 3D</a>
+    <a href="#" onclick="showSection('come_funziona')">Come Funziona</a>
+    <a href="#" onclick="showSection('credits')">Ringraziamenti</a>
+  </nav>
+  <section id="intro" class="active">
+    <h2>Benvenuti nel nostro stand di realtà aumentata!</h2>
+    <p>In questo progetto abbiamo realizzato un’esperienza interattiva per esplorare il cuore umano in 3D e in realtà aumentata. Utilizzando la tecnologia WebAR, potete visualizzare il cuore sul vostro dispositivo come se fosse realmente davanti a voi.</p>
+    <a class="ar-button" href="cuore-ar.html" target="_blank">Visualizza il cuore in realtà aumentata</a>
+  </section>
+  <section id="modello">
+    <h2>Il nostro modello 3D</h2>
+    <p>Abbiamo scelto un modello realistico del cuore umano da Sketchfab, che è stato adattato per essere visualizzato in AR tramite browser. Grazie alla piattaforma p3d.in, il cuore è accessibile da qualsiasi dispositivo.</p>
+  </section>
+  <section id="come_funziona">
+    <h2>Come funziona?</h2>
+    <ol>
+      <li>Scansiona il QR code o clicca sul link sopra.</li>
+      <li>Consenti l’accesso alla fotocamera.</li>
+      <li>Inquadra uno spazio e guarda apparire il cuore!</li>
+    </ol>
+  </section>
+  <section id="credits">
+    <h2>Ringraziamenti</h2>
+    <p>Grazie a tutti per l’ascolto! Speriamo che il progetto vi sia piaciuto e che vi abbia fatto capire come la realtà aumentata possa essere usata anche per imparare. È stata un’esperienza utile e divertente, grazie anche ai professori che ci hanno accompagnato passo dopo passo.</p>
+  </section>
+  <footer>
+    &copy; 2025 Progetto Cuore Umano AR
+  </footer>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>

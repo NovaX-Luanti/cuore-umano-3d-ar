@@ -3,139 +3,334 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esplora il Cuore Umano in 3D - Presentazione</title>
+  <title>Esplora il Cuore Umano in 3D – Presentazione</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
+    /* ----------  VARIABILI  ---------- */
+    :root{
+      --primary:#b71c1c;
+      --primary-dark:#8c1414;
+      --bg:#f5f5f5;
+      --text:#222;
+      --code-bg:#1e1e1e;
+      --code-text:#e4e4e4;
     }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fafafa;
-      color: #333;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
+
+    /* ----------  RESET  ---------- */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;width:100%}
+    body{
+      font-family:'Inter',system-ui,Segoe UI,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      line-height:1.6;
     }
-    header {
-      background: #b71c1c;
-      color: white;
-      padding: 40px 20px 20px;
-      text-align: center;
+
+    /* ----------  TYPO  ---------- */
+    h1{font-size:2rem;font-weight:600;margin-bottom:.4rem}
+    h2{font-size:1.4rem;font-weight:600;margin-bottom:.6rem}
+    h3{font-size:1.15rem;font-weight:600;margin:1rem 0 .4rem}
+
+    /* ----------  HEADER  ---------- */
+    header{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:40px 20px;
+      backdrop-filter:blur(4px);
     }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2em;
+
+    /* ----------  NAV  ---------- */
+    nav{
+      background:var(--primary-dark);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.2rem;
     }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #d32f2f;
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:12px 18px;
+      font-weight:600;
+      transition:background .3s;
+      border-radius:4px;
     }
-    nav a {
-      color: white;
-      padding: 12px 18px;
-      text-decoration: none;
-      display: block;
-      font-weight: bold;
-      transition: background 0.3s;
+    nav a:hover,nav a.active{
+      background:var(--primary);
     }
-    nav a:hover {
-      background: #b71c1c;
+
+    /* ----------  MAIN & SECTION  ---------- */
+    main{flex:1}
+    section{
+      display:none;
+      max-width:900px;
+      margin:30px auto 0;
+      padding:25px;
+      background:#fff;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
+      backdrop-filter:blur(4px);
+      animation:fadeIn .5s ease;
     }
-    main {
-      flex: 1;
+    section.active{display:block}
+
+    /* ----------  FOOTER  ---------- */
+    footer{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:12px 10px;
+      font-size:.9rem;
+      margin-top:auto;
     }
-    section {
-      padding: 25px;
-      display: none;
-      max-width: 800px;
-      margin: auto;
+    footer a{color:#fff;text-decoration:underline}
+
+    /* ----------  LICENZA  ---------- */
+    .license-box{
+      display:none;
+      background:#fff;
+      color:#000;
+      padding:15px;
+      margin-top:10px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:.85rem;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+      white-space:pre-wrap
     }
-    section.active {
-      display: block;
+
+    /* ----------  CODE BLOCK  ---------- */
+    pre{
+      background:var(--code-bg);
+      color:var(--code-text);
+      padding:14px;
+      border-radius:6px;
+      overflow-x:auto;
+      font-size:.85rem;
+      margin:12px 0 18px;
     }
-    .ar-button {
-      display: inline-block;
-      background: #d32f2f;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      font-size: 1em;
-      transition: background 0.3s;
-    }
-    .ar-button:hover {
-      background: #b71c1c;
-    }
-    footer {
-      background: #b71c1c;
-      color: white;
-      text-align: center;
-      padding: 12px 10px;
-      font-size: 0.9em;
-      margin-top: auto;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6em;
-      }
-      nav a {
-        padding: 10px;
-        font-size: 0.9em;
-      }
-      .ar-button {
-        font-size: 0.9em;
-        padding: 10px 16px;
-      }
+
+    code{font-family:Consolas,monospace}
+
+    /* ----------  ANIMAZIONI  ---------- */
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes blurIn{from{filter:blur(14px);opacity:0}to{filter:blur(0);opacity:1}}
+    @keyframes blurOut{from{filter:blur(0);opacity:1}to{filter:blur(14px);opacity:0}}
+    .blur-in{animation:blurIn .6s forwards}
+    .blur-out{animation:blurOut .6s forwards}
+
+    /* ----------  MOBILE  ---------- */
+    @media(max-width:600px){
+      header{padding:28px 16px}
+      h1{font-size:1.6rem}
+      nav a{padding:10px;font-size:.9rem}
+      section{margin:20px 10px;padding:20px}
     }
   </style>
 </head>
 <body>
+
+  <!-- ===== HEADER ===== -->
   <header>
     <h1>Esplora il Cuore Umano in 3D</h1>
-    <p>Un viaggio interattivo per scoprire l'anatomia del cuore grazie alla Realtà Aumentata</p>
+    <p>Un viaggio interattivo che porta l’anatomia fuori dai libri grazie alla Realtà Aumentata</p>
   </header>
+
+  <!-- ===== NAVIGATION ===== -->
   <nav>
-    <a href="#" onclick="showSection('intro')">Introduzione</a>
-    <a href="#" onclick="showSection('modello')">Modello 3D</a>
-    <a href="#" onclick="showSection('come_funziona')">Istruzioni</a>
-    <a href="#" onclick="showSection('credits')">Ringraziamenti</a>
+    <a href="#" onclick="showSection('fase1',this)" class="active">Fase 1</a>
+    <a href="#" onclick="showSection('fase2',this)">Fase 2</a>
+    <a href="#" onclick="showSection('fase3',this)">Fase 3</a>
+    <a href="#" onclick="showSection('fase4',this)">Fase 4</a>
+    <a href="#" onclick="showSection('fase5',this)">Fase 5</a>
+    <a href="#" onclick="showSection('fase6',this)">Fase 6</a>
+    <a href="#" onclick="showSection('credits',this)">Ringraziamenti</a>
   </nav>
+
+  <!-- ===== MAIN ===== -->
   <main>
-    <section id="intro" class="active">
-      <h2>Benvenuti!</h2>
-      <p>Questo progetto nasce dal desiderio di unire scienza, tecnologia e creatività per offrire un'esperienza educativa accessibile e immersiva. Grazie all'utilizzo della Realtà Aumentata, potrete visualizzare e studiare il cuore umano in tre dimensioni, osservando da vicino la sua struttura come se fosse realmente davanti a voi. L'attività è pensata per studenti, curiosi e appassionati di scienza di ogni età.</p>
-      <a class="ar-button" href="index.html" target="_blank">Visualizza il cuore in Realtà Aumentata</a>
+    <!-- ----------  FASE 1  ---------- -->
+    <section id="fase1" class="active">
+      <h2>Fase 1 – Pianificazione del Progetto</h2>
+      <p>
+        Obiettivo: realizzare un’esperienza WebAR che mostrasse un cuore umano realistico, accessibile
+        a studenti e visitatori tramite un semplice QR. Ruoli divisi in tre micro-team (Contenuti,
+        Dev, Comunicazione) e timeline di 7 giorni tracciata su GitHub Projects.
+      </p>
     </section>
-    <section id="modello">
-      <h2>Il modello 3D</h2>
-      <p>Abbiamo selezionato un modello tridimensionale realistico del cuore umano, disponibile con licenza Creative Commons Attribution su Sketchfab. Il modello è stato adattato per la visualizzazione in AR, in modo da poter essere esplorato su qualsiasi dispositivo moderno direttamente nel browser, senza bisogno di app aggiuntive.</p>
+
+    <!-- ----------  FASE 2  ---------- -->
+    <section id="fase2">
+      <h2>Fase 2 – Preparazione dei Materiali</h2>
+      <p>
+        Il modello “Realistic Human Heart” (licenza CC-BY) è stato scaricato da Sketchfab in formato
+        <code>.glb</code> già ottimizzato (&lt; 90 k triangoli, texture 4 K). Nessuna modifica con Blender:
+        l’asset originale garantiva la massima qualità su mobile senza ulteriori operazioni.
+      </p>
     </section>
-    <section id="come_funziona">
-      <h2>Come funziona</h2>
-      <ol>
-        <li>Clicca sul pulsante in alto oppure scansiona il QR code presente nello stand.</li>
-        <li>Conferma l'accesso alla fotocamera se richiesto dal tuo dispositivo.</li>
-        <li>Punta la fotocamera su una superficie libera e guarda il cuore comparire davanti a te, pronto per essere osservato e ruotato!</li>
-      </ol>
+
+    <!-- ----------  FASE 3  ---------- -->
+    <section id="fase3">
+      <h2>Fase 3 – Realizzazione WebAR & Codice</h2>
+
+      <h3>Embed del modello</h3>
+      <p>
+        Tutto è stato sviluppato con <strong>puro HTML + CSS + JavaScript vanilla</strong>. Il cuore viene
+        visualizzato tramite l’iframe di Sketchfab, che include già il pulsante AR.
+      </p>
+
+<pre><code>&lt;iframe id="appFrame"
+  allow="autoplay; fullscreen; xr-spatial-tracking"
+  src="https://sketchfab.com/models/3f8072336ce94d18b3d0d055a1ece089/embed"&gt;
+&lt;/iframe&gt;</code></pre>
+
+      <ul>
+        <li><code>allow="xr-spatial-tracking"</code> abilita WebXR su Android.</li>
+        <li>Sketchfab genera automaticamente il file <code>.usdz</code> per AR Quick Look su iOS.</li>
+      </ul>
+
+      <h3>Loader animato</h3>
+      <p>
+        Prima che l’iframe sia pronto, mostriamo un cuore
+        <code>&lt;i class="fa-solid fa-heart"&gt;</code> che pulsa con l’animation
+        <code>@beat</code> e frasi dinamiche (“Ossigenazione in corso…”).
+      </p>
+
+<pre><code>const phrases = [
+  'Caricamento dei battiti…',
+  'Sincronizzazione del ritmo…',
+  'Avvio della circolazione…'
+];
+let i = 0;
+setInterval(() =&gt; {
+  phraseEl.textContent = phrases[i = (i+1) % phrases.length];
+}, 3000);</code></pre>
+
+      <h3>Controllo offline</h3>
+      <p>
+        Se la connessione cade, sostituiamo loader/iframe con un’icona Wi-Fi barrata
+        grazie agli eventi <code>online/offline</code>:
+      </p>
+
+<pre><code>window.addEventListener('offline', () =&gt; transition(loader, offlineNotice));
+window.addEventListener('online',  () =&gt; transition(offlineNotice, content));</code></pre>
+
+      <h3>Navigazione a schede</h3>
+      <p>
+        La funzione <code>showSection()</code> gestisce il passaggio fra le sezioni della pagina
+        con un effetto blur-in/out da 14 px:
+      </p>
+
+<pre><code>function showSection(id, link){
+  const current = document.querySelector('section.active');
+  const next    = document.getElementById(id);
+  if(!next || current === next) return;
+
+  document.querySelectorAll('nav a').forEach(a =&gt; a.classList.remove('active'));
+  link.classList.add('active');
+
+  current.classList.add('blur-out');
+  setTimeout(() =&gt; {
+    current.classList.remove('active','blur-out');
+    next.classList.add('active','blur-in');
+    setTimeout(() =&gt; next.classList.remove('blur-in'), 600);
+  }, 600);
+}</code></pre>
+
+      <p>
+        Nessun framework, nessuna pipeline Unity: solo tre file (<code>index.html</code>,
+        <code>style</code> interno e uno <code>&lt;script&gt;</code>) commitati su
+        GitHub Pages per un deploy immediato.
+      </p>
     </section>
+
+    <!-- ----------  FASE 4  ---------- -->
+    <section id="fase4">
+      <h2>Fase 4 – Generazione del QR Code</h2>
+      <p>
+        Il QR è creato con <strong>qrgen-icon</strong>
+        (<code>node qrgen-icon.js --url ... --logo ...</code>) e include il logo NovaX al centro.
+        Output in PNG retina e correzione H per una scansione stabile fino a 5 m.
+      </p>
+    </section>
+
+    <!-- ----------  FASE 5  ---------- -->
+    <section id="fase5">
+      <h2>Fase 5 – Contenuti Didattici</h2>
+      <p>
+        Schede PDF, quiz Google Forms, infografiche SVG animate: l’esperienza unisce visualizzazione 3D,
+        spiegazioni testuali e verifica immediata delle conoscenze.
+      </p>
+    </section>
+
+    <!-- ----------  FASE 6  ---------- -->
+    <section id="fase6">
+      <h2>Fase 6 – Test e Presentazione</h2>
+      <p>
+        Test riusciti su iPhone 11, Redmi Note 13 Pro+, Chromebook e laptop Windows: tempo medio di avvio
+        &lt; 5 s in 4 G. Allo stand: poster A1 con QR, tablet di prova, monitor che riproduce il modello.
+      </p>
+    </section>
+
+    <!-- ----------  RINGRAZIAMENTI  ---------- -->
     <section id="credits">
       <h2>Ringraziamenti</h2>
-      <p>Il progetto è stato realizzato con il contributo del nostro gruppo di lavoro e con la preziosa guida dei docenti. Abbiamo appreso nuove competenze, sperimentato strumenti innovativi e collaborato attivamente per raggiungere questo risultato. Speriamo che la nostra esperienza possa ispirarvi e rendere l'apprendimento dell'anatomia ancora più interessante e coinvolgente.</p>
+      <p>
+        Grazie ai docenti che ci hanno supportato e a tutti voi che esplorerete ogni battito digitale!
+      </p>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
-    &copy; 2025 NovaX - <a href="LICENSE.txt" style="color: white; text-decoration: underline;">Licenza CC BY 4.0</a>
+    © 2025 NovaX – <a onclick="toggleLicense()">Licenza CC BY 4.0</a>
+    <div id="license-box" class="license-box">
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Puoi:
+• Condividere — copiare e ridistribuire il materiale in qualsiasi formato.  
+• Adattare — remixare, trasformare e costruire a partire dal materiale, anche per scopi commerciali.
+
+A condizione che tu:
+• Attribuisca i crediti adeguati.  
+• Indichi se sono state effettuate modifiche.  
+• Non applichi restrizioni aggiuntive.
+
+Testo completo ➜ https://creativecommons.org/licenses/by/4.0/
+    </div>
   </footer>
+
+  <!-- ===== SCRIPT ===== -->
   <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    /* --------  SEZIONI & NAV  -------- */
+    function showSection(id, link){
+      const current=document.querySelector('section.active');
+      const next=document.getElementById(id);
+      if(!next||current===next) return;
+
+      document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+      link.classList.add('active');
+
+      current.classList.add('blur-out');
+      setTimeout(()=>{
+        current.classList.remove('active','blur-out');
+        next.classList.add('active','blur-in');
+        setTimeout(()=>next.classList.remove('blur-in'),600);
+      },600);
+    }
+
+    /* --------  TOGGLE LICENZA  -------- */
+    function toggleLicense(){
+      const box=document.getElementById('license-box');
+      box.style.display=(box.style.display==='block')?'none':'block';
     }
   </script>
 </body>

@@ -3,37 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esplora il Cuore Umano in 3D</title>
+  <title>Esplora il Cuore Umano in 3D - Presentazione</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      background: #f2f2f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
     }
     header {
       background: #b71c1c;
       color: white;
-      padding: 20px;
+      padding: 40px 20px 20px;
       text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
     }
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background: #d32f2f;
     }
     nav a {
       color: white;
-      padding: 14px 20px;
+      padding: 12px 18px;
       text-decoration: none;
       display: block;
+      font-weight: bold;
+      transition: background 0.3s;
     }
     nav a:hover {
       background: #b71c1c;
     }
+    main {
+      flex: 1;
+    }
     section {
-      padding: 20px;
+      padding: 25px;
       display: none;
+      max-width: 800px;
+      margin: auto;
     }
     section.active {
       display: block;
@@ -42,52 +62,75 @@
       display: inline-block;
       background: #d32f2f;
       color: white;
-      padding: 10px 15px;
+      padding: 12px 20px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .ar-button:hover {
+      background: #b71c1c;
     }
     footer {
       background: #b71c1c;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 12px 10px;
+      font-size: 0.9em;
+      margin-top: auto;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      .ar-button {
+        font-size: 0.9em;
+        padding: 10px 16px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Esplora il Cuore Umano in 3D</h1>
-    <p>Un battito tecnologico per capire l'anatomia in realtà aumentata</p>
+    <p>Un viaggio interattivo per scoprire l'anatomia del cuore grazie alla Realtà Aumentata</p>
   </header>
   <nav>
     <a href="#" onclick="showSection('intro')">Introduzione</a>
     <a href="#" onclick="showSection('modello')">Modello 3D</a>
-    <a href="#" onclick="showSection('come_funziona')">Come Funziona</a>
+    <a href="#" onclick="showSection('come_funziona')">Istruzioni</a>
     <a href="#" onclick="showSection('credits')">Ringraziamenti</a>
   </nav>
-  <section id="intro" class="active">
-    <h2>Benvenuti nel nostro stand di realtà aumentata!</h2>
-    <p>In questo progetto abbiamo realizzato un’esperienza interattiva per esplorare il cuore umano in 3D e in realtà aumentata. Utilizzando la tecnologia WebAR, potete visualizzare il cuore sul vostro dispositivo come se fosse realmente davanti a voi.</p>
-    <a class="ar-button" href="cuore-ar.html" target="_blank">Visualizza il cuore in realtà aumentata</a>
-  </section>
-  <section id="modello">
-    <h2>Il nostro modello 3D</h2>
-    <p>Abbiamo scelto un modello realistico del cuore umano da Sketchfab, che è stato adattato per essere visualizzato in AR tramite browser. Grazie alla piattaforma p3d.in, il cuore è accessibile da qualsiasi dispositivo.</p>
-  </section>
-  <section id="come_funziona">
-    <h2>Come funziona?</h2>
-    <ol>
-      <li>Scansiona il QR code o clicca sul link sopra.</li>
-      <li>Consenti l’accesso alla fotocamera.</li>
-      <li>Inquadra uno spazio e guarda apparire il cuore!</li>
-    </ol>
-  </section>
-  <section id="credits">
-    <h2>Ringraziamenti</h2>
-    <p>Grazie a tutti per l’ascolto! Speriamo che il progetto vi sia piaciuto e che vi abbia fatto capire come la realtà aumentata possa essere usata anche per imparare. È stata un’esperienza utile e divertente, grazie anche ai professori che ci hanno accompagnato passo dopo passo.</p>
-  </section>
+  <main>
+    <section id="intro" class="active">
+      <h2>Benvenuti!</h2>
+      <p>Questo progetto nasce dal desiderio di unire scienza, tecnologia e creatività per offrire un'esperienza educativa accessibile e immersiva. Grazie all'utilizzo della Realtà Aumentata, potrete visualizzare e studiare il cuore umano in tre dimensioni, osservando da vicino la sua struttura come se fosse realmente davanti a voi. L'attività è pensata per studenti, curiosi e appassionati di scienza di ogni età.</p>
+      <a class="ar-button" href="index.html" target="_blank">Visualizza il cuore in Realtà Aumentata</a>
+    </section>
+    <section id="modello">
+      <h2>Il modello 3D</h2>
+      <p>Abbiamo selezionato un modello tridimensionale realistico del cuore umano, disponibile con licenza Creative Commons Attribution su Sketchfab. Il modello è stato adattato per la visualizzazione in AR, in modo da poter essere esplorato su qualsiasi dispositivo moderno direttamente nel browser, senza bisogno di app aggiuntive.</p>
+    </section>
+    <section id="come_funziona">
+      <h2>Come funziona</h2>
+      <ol>
+        <li>Clicca sul pulsante in alto oppure scansiona il QR code presente nello stand.</li>
+        <li>Conferma l'accesso alla fotocamera se richiesto dal tuo dispositivo.</li>
+        <li>Punta la fotocamera su una superficie libera e guarda il cuore comparire davanti a te, pronto per essere osservato e ruotato!</li>
+      </ol>
+    </section>
+    <section id="credits">
+      <h2>Ringraziamenti</h2>
+      <p>Il progetto è stato realizzato con il contributo del nostro gruppo di lavoro e con la preziosa guida dei docenti. Abbiamo appreso nuove competenze, sperimentato strumenti innovativi e collaborato attivamente per raggiungere questo risultato. Speriamo che la nostra esperienza possa ispirarvi e rendere l'apprendimento dell'anatomia ancora più interessante e coinvolgente.</p>
+    </section>
+  </main>
   <footer>
-    &copy; 2025 Progetto Cuore Umano AR
+    &copy; 2025 NovaX - <a href="LICENSE.txt" style="color: white; text-decoration: underline;">Licenza CC BY 4.0</a>
   </footer>
   <script>
     function showSection(id) {
